@@ -20,11 +20,11 @@
 
         .tracker-container {
             text-align: center;
-            border: 2px solid #6F4F28;
+            border: 2px solid #6F4F28; /* Warm Brown border */
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            background-color: #6F4F28; /* Warm Brown background */
+            background-color: transparent; /* Transparent background */
             max-width: 300px;
             width: 100%;
             font-size: 16px;
@@ -33,14 +33,14 @@
 
         .tracker-header {
             font-size: 18px;
-            color: #F5F5DC; /* Golden Yellow header */
+            color: #6F4F28; /* Warm Brown text for header */
             margin-bottom: 15px;
         }
 
         .book-count {
             font-size: 28px;
             font-weight: bold;
-            color: #F5F5DC; /* Soft Beige text color */
+            color: #6F4F28; /* Warm Brown text for book count */
         }
 
         .buttons-container {
@@ -56,13 +56,13 @@
 
         .goal-input {
             padding: 8px;
-            border: 1px solid #6F4F28;
+            border: 1px solid #6F4F28; /* Warm Brown border */
             border-radius: 5px;
             font-size: 14px;
             width: 70%;
             max-width: 220px;
             margin: 0 auto 10px;
-            color: #6F4F28; /* Warm Brown text color */
+            color: #6F4F28; /* Warm Brown text for input */
         }
 
         .progress-container {
@@ -80,7 +80,7 @@
 
         .progress {
             height: 100%;
-            background-color: #FFB800; /* Golden Yellow progress */
+            background-color: #6F4F28; /* Warm Brown progress */
             width: 0%;
             transition: width 0.5s ease-in-out;
             border-radius: 10px 0 0 10px;
@@ -144,7 +144,7 @@
 <body>
 
 <div class="tracker-container">
-    <div class="tracker-header">Books Read</div>
+    <div class="tracker-header">Books Read This Year</div>
     <div class="book-count" id="book-count">0</div>
 
     <div class="buttons-container">
