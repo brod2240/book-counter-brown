@@ -90,15 +90,16 @@
             border-radius: 10px 0 0 10px;
         }
 
+        /* Brown initial button color */
         button {
             padding: 8px 15px;
-            background-color: #D46B3C; /* Pumpkin Orange button */
+            background-color: #6F4F28; /* Warm Brown button */
             color: white;
             border: none;
             border-radius: 5px;
             cursor: pointer;
             font-size: 18px;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
         /* Golden yellow hover effect for the button */
@@ -216,31 +217,4 @@
     }
 
     // Function to update the reading goal from input
-    function updateGoal() {
-        console.log("updateGoal triggered!");  // Log if the goal is updated
-        readingGoal = parseInt(document.getElementById('reading-goal').value) || 0;
-        updateProgress();
-        saveData();
-    }
-
-    // Function to update the progress bar
-    function updateProgress() {
-        const progress = document.getElementById('progress');
-        if (readingGoal > 0) {
-            const progressPercentage = (bookCount / readingGoal) * 100;
-            progress.style.width = Math.min(progressPercentage, 100) + '%';
-        } else {
-            progress.style.width = '0%';
-        }
-    }
-
-    // Function to save data to localStorage
-    function saveData() {
-        console.log("Saving data:", bookCount, readingGoal); // Log before saving to localStorage
-        localStorage.setItem('bookCount', bookCount);
-        localStorage.setItem('readingGoal', readingGoal);
-    }
-</script>
-
-</body>
-</html>
+    function update
