@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Tracker Widget</title>
     <style>
+        /* Making the background transparent for the entire body */
         body {
             font-family: 'Times New Roman', serif; /* Changed font to Times New Roman */
             background-color: transparent; /* Transparent background */
@@ -18,6 +19,7 @@
             flex-direction: column;
         }
 
+        /* Transparent background for the tracker container */
         .tracker-container {
             text-align: center;
             padding: 20px;
@@ -30,16 +32,19 @@
             box-sizing: border-box;
         }
 
+        /* Bolder and larger header font */
         .tracker-header {
-            font-size: 18px;
+            font-size: 20px; /* Increased font size for better visibility */
+            font-weight: 700; /* Bolder font weight */
             color: #6F4F28; /* Warm Brown text for header */
             margin-bottom: 15px;
         }
 
+        /* Book count color change to golden yellow */
         .book-count {
             font-size: 28px;
             font-weight: bold;
-            color: #6F4F28; /* Warm Brown text for book count */
+            color: #FFD700; /* Golden Yellow color */
         }
 
         .buttons-container {
@@ -96,8 +101,10 @@
             transition: background-color 0.3s ease;
         }
 
+        /* Golden yellow hover effect for the button */
         button:hover {
-            background-color: #e57373; /* Lighter orange hover */
+            background-color: #FFD700; /* Golden Yellow hover effect */
+            color: #6F4F28; /* Brown text color for contrast */
         }
 
         @media (max-width: 600px) {
