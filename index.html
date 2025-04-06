@@ -22,27 +22,27 @@
         /* Transparent background for the tracker container */
         .tracker-container {
             text-align: center;
-            padding: 20px;
+            padding: 30px; /* Increased padding for more space */
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             background-color: transparent; /* Transparent background */
-            max-width: 300px;
+            max-width: 350px; /* Increased max width */
             width: 100%;
-            font-size: 16px;
+            font-size: 18px; /* Larger base font size */
             box-sizing: border-box;
         }
 
         /* Bolder and larger header font */
         .tracker-header {
-            font-size: 20px; /* Increased font size for better visibility */
+            font-size: 26px; /* Increased font size */
             font-weight: 700; /* Bolder font weight */
             color: #6F4F28; /* Warm Brown text for header */
-            margin-bottom: 15px;
+            margin-bottom: 20px; /* Increased margin */
         }
 
         /* Book count color change to golden yellow */
         .book-count {
-            font-size: 28px;
+            font-size: 38px; /* Increased font size */
             font-weight: bold;
             color: #FFD700; /* Golden Yellow color */
         }
@@ -50,36 +50,36 @@
         .buttons-container {
             display: flex;
             justify-content: center;
-            gap: 15px;
-            margin-top: 15px;
+            gap: 20px; /* Increased gap between buttons */
+            margin-top: 20px; /* Increased margin */
         }
 
         .goal-input-container {
-            margin-top: 15px;
+            margin-top: 20px; /* Increased margin */
         }
 
         .goal-input {
-            padding: 8px;
+            padding: 12px; /* Larger padding */
             border: 1px solid #6F4F28; /* Warm Brown border */
             border-radius: 5px;
-            font-size: 14px;
-            width: 70%;
-            max-width: 220px;
-            margin: 0 auto 10px;
+            font-size: 16px; /* Increased font size */
+            width: 80%; /* Increased width */
+            max-width: 250px; /* Increased max-width */
+            margin: 0 auto 20px; /* Increased bottom margin */
             color: #6F4F28; /* Warm Brown text for input */
         }
 
         .progress-container {
-            margin-top: 15px;
+            margin-top: 20px; /* Increased margin */
         }
 
         .progress-bar {
             width: 100%;
-            height: 15px;
+            height: 20px; /* Increased height for better visibility */
             background-color: #e0e0e0;
             border-radius: 10px;
             overflow: hidden;
-            margin-top: 10px;
+            margin-top: 15px; /* Increased margin */
         }
 
         .progress {
@@ -92,13 +92,13 @@
 
         /* Brown initial button color */
         button {
-            padding: 8px 15px;
+            padding: 12px 20px; /* Larger padding for the buttons */
             background-color: #6F4F28; /* Warm Brown button */
             color: white;
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            font-size: 18px;
+            font-size: 22px; /* Larger font size */
             transition: background-color 0.3s ease, color 0.3s ease;
         }
 
@@ -110,40 +110,40 @@
 
         @media (max-width: 600px) {
             .tracker-container {
-                max-width: 280px;
-                padding: 15px;
+                max-width: 300px; /* Adjusted max-width */
+                padding: 20px; /* Adjusted padding */
             }
 
             .tracker-header {
-                font-size: 16px;
+                font-size: 22px; /* Smaller header size on smaller screens */
             }
 
             .book-count {
-                font-size: 24px;
+                font-size: 32px; /* Smaller book count on smaller screens */
             }
 
             .goal-input {
-                font-size: 12px;
-                width: 80%;
+                font-size: 14px; /* Smaller input font size on smaller screens */
+                width: 90%; /* Increased width */
             }
 
             button {
-                font-size: 16px;
-                padding: 6px 12px;
+                font-size: 20px; /* Smaller button font size on smaller screens */
+                padding: 10px 18px; /* Adjusted button padding */
             }
         }
 
         @media (max-width: 400px) {
             .tracker-container {
-                max-width: 250px;
+                max-width: 280px;
             }
 
             .book-count {
-                font-size: 22px;
+                font-size: 28px; /* Even smaller font size for book count */
             }
 
             .tracker-header {
-                font-size: 14px;
+                font-size: 18px; /* Even smaller header size for mobile screens */
             }
         }
     </style>
@@ -217,4 +217,31 @@
     }
 
     // Function to update the reading goal from input
-    function update
+    function updateGoal() {
+        console.log("updateGoal triggered!");  // Log if the goal is updated
+        readingGoal = parseInt(document.getElementById('reading-goal').value) || 0;
+        updateProgress();
+        saveData();
+    }
+
+    // Function to update the progress bar
+    function updateProgress() {
+        const progress = document.getElementById('progress');
+        if (readingGoal > 0) {
+            const progressPercentage = (bookCount / readingGoal) * 100;
+            progress.style.width = Math.min(progressPercentage, 100) + '%';
+        } else {
+            progress.style.width = '0%';
+        }
+    }
+
+    // Function to save data to localStorage
+    function saveData() {
+        console.log("Saving data:", bookCount, readingGoal); // Log before saving to localStorage
+        localStorage.setItem('bookCount', bookCount);
+        localStorage.setItem('readingGoal', readingGoal);
+    }
+</script>
+
+</body>
+</html>
